@@ -37,11 +37,13 @@ public class Form2 extends AppCompatActivity {
     View.OnClickListener oclBtnOpenForm2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            int val = Integer.parseInt(editText.getText().toString())
-                    + Integer.parseInt(counter.getText().toString());
-            intent.putExtra("counter", val + "");
-            startActivity(intent);
+            if (NumberUtility.isNumber(editText.getText().toString())) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                int val = Integer.parseInt(editText.getText().toString())
+                        + Integer.parseInt(counter.getText().toString());
+                intent.putExtra("counter", val + "");
+                startActivity(intent);
+            }
 
         }
     };

@@ -1,6 +1,5 @@
 package com.example.lab1;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -38,11 +37,13 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener oclBtnOpenForm2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), Form2.class);
-            int val = Integer.parseInt(editText.getText().toString())
-                    + Integer.parseInt(counter.getText().toString());
-            intent.putExtra("counter", val + "");
-            startActivity(intent);
+            if (NumberUtility.isNumber(editText.getText().toString())) {
+                Intent intent = new Intent(getApplicationContext(), Form2.class);
+                int val = Integer.parseInt(editText.getText().toString())
+                        + Integer.parseInt(counter.getText().toString());
+                intent.putExtra("counter", val + "");
+                startActivity(intent);
+            }
 
         }
     };
