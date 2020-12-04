@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/kelvin"
+        android:title="To kelvin"/>
+    <item
+        android:id="@+id/celsius"
+        android:title="to celsius" />
+    <item
+        android:id="@+id/fahrenheit"
+        android:title="To fahrenheit" />
+
+</menu>
