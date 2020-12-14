@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         counter = findViewById(R.id.counter);
 
-        if (getIntent().getStringExtra("counter") != null) {
+        if (getIntent().getStringExtra(strExtra) != null) {
             counter.setText(getIntent().getStringExtra(strExtra));
         }
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), Form2.class);
             int val = Integer.parseInt(editText.getText().toString())
                     + Integer.parseInt(counter.getText().toString());
-            intent.putExtra("counter", val + "");
+            intent.putExtra(strExtra, val + "");
             editText.setText("");
             startActivityForResult(intent, REQUEST_CODE);
 
