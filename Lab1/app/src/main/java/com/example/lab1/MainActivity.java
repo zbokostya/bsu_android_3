@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         counter = findViewById(R.id.counter);
 
-        if (getIntent().getStringExtra("counter") != null) {
+        if (getIntent().getStringExtra(strExtra) != null) {
             counter.setText(getIntent().getStringExtra(strExtra));
         }
 
